@@ -35,7 +35,7 @@ const SignUp = () => {
             console.log("서버로 회원가입하기");
             setSignUpError('');
             setSignUpSuccess(false);
-            axios.post('http://localhost:3085/api/users', {
+            axios.post('http://localhost:3085/api/users/signup', {
                 email, 
                 nickname, 
                 password

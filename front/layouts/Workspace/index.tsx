@@ -4,7 +4,7 @@ import useSWR from 'swr';
 import gravatar from 'gravatar';
 import axios from "axios";
 import { Redirect } from "react-router";
-import { Channels, Chats, Header, MenuScroll, ProfileImg, RightMenu, WorkspaceName, WorkspaceWrapper, Workspaces } from "./styles";
+import { Channels, Chats, Container, Header, MenuScroll, ProfileImg, RightMenu, WorkspaceName, WorkspaceWrapper, Workspaces } from "./styles";
 
 const Workspace: FC = ({children}) => {
   const { data, error, mutate } = useSWR('http://localhost:3085/api/users', fetcher);
@@ -23,26 +23,25 @@ const Workspace: FC = ({children}) => {
   }
 
   return (
-    <div id="container">
+    <Container id="container">
       <Header>
         <span>
-            <ProfileImg src={gravatar.url(data.email, { s: '28px', d: 'retro' })} alt={data.nickname} />
-          </span>
-        <RightMenu>
-          <button onClick={onLogout}>로그아웃</button>
-        </RightMenu>
+          <ProfileImg src={gravatar.url(data.email, { s: '28px', d: 'retro' })} alt={data.nickname} />
+        </span>
+        <RightMenu onClick={onLogout}>Logout</RightMenu>
       </Header>
       
       <WorkspaceWrapper>
-        <Workspaces>test</Workspaces>
-        <Channels>
-          <WorkspaceName>Sleact</WorkspaceName>
-          <MenuScroll>MenuScroll</MenuScroll>
-        </Channels>
+        <Workspaces>
+          <ul>
+            <li>추천</li>
+            <li>최신</li>
+          </ul>
+        </Workspaces>
         <Chats>Chats</Chats>
       </WorkspaceWrapper>
       {children}
-    </div>
+    </Container>
   )
 }
 

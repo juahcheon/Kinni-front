@@ -73,12 +73,19 @@ const config: Configuration = {
     path: path.join(__dirname, 'dist'),
     filename: '[name].js',
     publicPath: '/dist/',
+    
   },
   devServer: {
     historyApiFallback: true, // react router
     port: 3080,
     devMiddleware: { publicPath: '/dist/' },
     static: { directory: path.resolve(__dirname) },
+    proxy: {
+      '/api' : {
+        target: 'http://localhost:3085/',
+        changeOrigin: true,
+      },
+    },
   },
 };
 

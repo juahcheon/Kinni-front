@@ -5,6 +5,7 @@ export const Header = styled.header`
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: bold;
     font-size: 48px;
+    color: rgb(40, 84, 48);
     line-height: 46px;
     letter-spacing: -0.75px;
     margin-top: 90px;
@@ -33,10 +34,9 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-    border-radius: 4px;
     --saf-0: rgba(var(--sk_foreground_high_solid, 134, 134, 134), 1);
     border: 1px solid #fff;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid rgb(95, 141, 78);
     transition: border 80ms ease-out, box-shadow 80ms ease-out;
     box-sizing: border-box;
     margin: 0 0 10px;
@@ -61,8 +61,8 @@ export const Button = styled.button`
     margin-bottom: 12px;
     width: 100%;
     max-width: 100%;
-    color: #000;
-    // background-color: #4a154b;
+    color: #fff;
+    background-color: rgb(157, 192, 139);
     border: none;
     font-size: 18px;
     font-weight: 900;

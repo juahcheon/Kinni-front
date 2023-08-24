@@ -1,17 +1,25 @@
 import styled from '@emotion/styled';
 
 export const RightMenu = styled.div`
-  
+  cursor: pointer;
+`;
+
+export const Container = styled.div`
+  width: 390px;
+  margin: 0 auto;
 `;
 
 export const Header = styled.header`
-  width: 400px;
-  height: 38px;
-  background: #350d36;
+  width: 100%;
+  height: 60px;
+  background: rgb(164, 190, 123);
   color: #ffffff;
   box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
-  padding: 5px;
-  text-align: center;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const ProfileImg = styled.img`
@@ -56,21 +64,34 @@ export const LogOutButton = styled.button`
 `;
 
 export const WorkspaceWrapper = styled.div`
-  display: flex;
+  // display: flex;
   flex: 1;
 `;
 
 export const Workspaces = styled.div`
-  width: 65px;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  background: #3f0e40;
-  border-top: 1px solid rgb(82, 38, 83);
-  border-right: 1px solid rgb(82, 38, 83);
+  width: 100%;
+  height: 30px;
+  border-bottom: 1px solid rgb(229, 217, 182);
   vertical-align: top;
   text-align: center;
-  padding: 15px 0 0;
+  & ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  & li {
+    width: 50%;
+    height: 100%;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: rgb(95, 141, 78);
+  }
 `;
 
 export const Channels = styled.nav`
